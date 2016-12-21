@@ -20,7 +20,7 @@ df.head()
 # Investigating the list of stopwords below, I decided I did not want to
 # exclude many of the words included. I, you, us, we, and gendered words
 # are all interesting words to examine in a presidential debate.
-# stopwords.words("english")
+# stopwords.words('english')
 
 # Instead, I will exclude the following words, which are less meaningful
 # in the context of debate dialogue.
@@ -75,7 +75,7 @@ train_x = df['Text'].apply(clean)
 train_x
 
 swds = stopwords.words('english')
-vect = TfidfVectorizer(analyzer="word", input="file", ngram_range=(1, 3),
+vect = TfidfVectorizer(analyzer='word', input='file', ngram_range=(1, 3),
                        min_df=0, stop_words=swds, max_features=5000)
 docs_new = [StringIO(str(x)) for x in train_x]
 debate_tf = vect.fit_transform(docs_new).toarray()
@@ -84,4 +84,5 @@ vocab = vect.get_feature_names()
 print(pd.Series(vocab)[:1000])
 
 # Save file
-np.savetxt('debate_tf.csv', debate_tf, delimiter=',')
+np.savetxt(os.path.join('generated', 'debate_tf.csv'),
+           debate_tf, delimiter=',')

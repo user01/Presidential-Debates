@@ -1,2 +1,2 @@
-debate_clean.csv
-debate_tf.csv
+generated/*
+!generated/.gitkeep

@@ -11,9 +11,7 @@ from nltk.corpus import stopwords, wordnet
 from sklearn.feature_extraction.text import TfidfVectorizer
 from io import StringIO
 
-path = '/Users/kaleyhanrahan/UVaMSDS/DS6001/PythonHW/ExtraCredit-DataCleaning/'
-file = 'debate.csv'
-df = pd.read_csv(path + file, encoding='iso-8859-1')
+df = pd.read_csv('debate.csv')
 
 df.shape  # =(1389, 4)
 df.head()

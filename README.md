@@ -12,6 +12,10 @@ conda env create -f environment.yml
 source activate presidential-debates
 ```
 
+## Run
+
+Execute the pipeline with `make`.
+
 ## Data
 
 Data was collected from a [Kaggle page](https://www.kaggle.com/mrisdal/2016-us-presidential-debates) and follows a form like this snippet:

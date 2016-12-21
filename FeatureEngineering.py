@@ -84,4 +84,4 @@ vocab = vect.get_feature_names()
 print(pd.Series(vocab)[:1000])
 
 # Save file
-np.savetxt('debate_clean.csv', debate_tf, delimiter=',')
+np.savetxt('debate_tf.csv', debate_tf, delimiter=',')

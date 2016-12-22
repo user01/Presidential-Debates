@@ -71,6 +71,12 @@ df_attr = df_cleaned.assign(
     Words=df_cleaned.TextClean.apply(lambda s: len(s)),
     Interrupt=df_cleaned.TextClean.apply(
         lambda s: s[-1] == '__ELLIPSIS__'),
+    MentionWellOpener=df_cleaned.TextClean.apply(
+        lambda s: 'well' == s[0]),
+    CountHe=df_cleaned.TextClean.apply(
+        lambda s: s.count('he')),
+    CountShe=df_cleaned.TextClean.apply(
+        lambda s: s.count('she')),
     MentionOk=df_cleaned.TextClean.apply(
         lambda s: 'ok' in s),
     MentionClinton=df_cleaned.TextClean.apply(

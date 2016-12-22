@@ -9,7 +9,6 @@ import pandas as pd
 
 # Models
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.cross_validation import cross_val_score
 from sklearn.metrics import roc_curve, auc
 
 
@@ -20,34 +19,38 @@ df = pd.read_pickle(os.path.join(
 df_train = df.query('Date != "10/19/2016"')
 df_test = df.query('Date == "10/19/2016"')
 
-feature_columns_available = [
+feature_columns_to_ignore = [
     'Line', 'Speaker', 'Text', 'Date', 'TextClean']
 
 
 clf = RandomForestClassifier(
     n_estimators=100, max_depth=10, max_features=500)
-scores = cross_val_score(clf, df_train.drop(
-    feature_columns_available, axis=1), df_train.Speaker, cv=5)
-
-print("Cross Validated Score: {}".format(scores.mean()))
-
-
-
-
-clf = RandomForestClassifier(
-    n_estimators=100, max_depth=10, max_features=500)
 clf_fit = clf.fit(
-    df_train.drop(feature_columns_available, axis=1), df_train.Speaker)
+    df_train.drop(feature_columns_to_ignore, axis=1), df_train.Speaker)
 
-print(df_test.Speaker[:10])
-print(clf_fit.predict(df_test.drop(feature_columns_available, axis=1))[:10])
-print(clf_fit.predict_proba(df_test.drop(feature_columns_available, axis=1))[:10])
-print("Test Score: {}".format(clf_fit.score(df_test.drop(feature_columns_available, axis=1), df_test.Speaker)))
+# print(df_test.Speaker[:10])
+# print(clf_fit.predict(df_test.drop(
+#     feature_columns_to_ignore, axis=1))[:10])
+# print(clf_fit.predict_proba(df_test.drop(
+#     feature_columns_to_ignore, axis=1))[:10])
+print("Final Test Score: {:5.2f}%".format(clf_fit.score(df_test.drop(
+    feature_columns_to_ignore, axis=1), df_test.Speaker) * 100))
 
-proba = clf_fit.predict_proba(df_test.drop(feature_columns_available, axis=1))
+proba = clf_fit.predict_proba(
+    df_test.drop(feature_columns_to_ignore, axis=1))
 
-proba_diff = list(map(lambda x: abs(x[0] - x[1]), proba))
-proba_contested = list(map(lambda x: x < 0.6, proba_diff))
-# len(list(filter(lambda x: x < 0.6, proba_diff)))
+df_full_a = pd.concat([df_test[["Speaker", "Text"]].reset_index(drop=True),
+                       pd.DataFrame(proba).rename(
+    columns={0: "ClintonProbability", 1: "TrumpProbability"})], axis=1)
 
-df_test[proba_contested][["Speaker","Text"]].to_csv("generated/out.text.csv")
+df_full_b = df_full_a.assign(SpeakerPredicted=df_full_a.ClintonProbability.apply(
+    lambda x: 'clinton' if x >= 0.5 else 'trump'))
+
+df_full_c = df_full_b.assign(
+    CorrectPrediction=df_full_b.SpeakerPredicted == df_full_b.Speaker)
+
+# Final DataFrame has speaker, original text, probablities, and helper
+#  predictions and success
+
+df_full_c.to_json(os.path.join(
+    'generated', 'model.results.json'), orient='records')

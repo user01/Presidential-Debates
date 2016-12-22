@@ -1,5 +1,5 @@
 
-all: generated/debate_tf.csv
+generated/model.results.json: generated/debate_tf.csv
 	python model.py
 
 generated/debate_tf.csv:
@@ -8,3 +8,4 @@ generated/debate_tf.csv:
 clean:
 	-$(RM) generated/*.csv
 	-$(RM) generated/*.pickle
+	-$(RM) generated/*.json

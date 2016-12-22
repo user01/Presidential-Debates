@@ -24,7 +24,7 @@ feature_columns_to_ignore = [
 
 
 clf = RandomForestClassifier(
-    n_estimators=100, max_depth=10, max_features=500)
+    n_estimators=100, max_depth=10, max_features=500, random_state=451)
 clf_fit = clf.fit(
     df_train.drop(feature_columns_to_ignore, axis=1), df_train.Speaker)
 

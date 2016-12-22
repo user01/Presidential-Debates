@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 
-#
-
 
 # Core Imports
 import os
@@ -73,6 +71,8 @@ df_attr = df_cleaned.assign(
     Words=df_cleaned.TextClean.apply(lambda s: len(s)),
     Interrupt=df_cleaned.TextClean.apply(
         lambda s: s[-1] == '__ELLIPSIS__'),
+    MentionOk=df_cleaned.TextClean.apply(
+        lambda s: 'ok' in s),
     MentionClinton=df_cleaned.TextClean.apply(
         lambda s: 'clinton' in s or 'hillary' in s),
     MentionTrump=df_cleaned.TextClean.apply(

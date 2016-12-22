@@ -3,13 +3,10 @@
 
 # Core Imports
 import os
-
 # Data
 import pandas as pd
-
 # Models
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_curve, auc
 
 
 df = pd.read_pickle(os.path.join(

@@ -1,7 +1,7 @@
 
 # Presidential Debates
 
-This project performs data cleaning and feature engineering on transcripts of each of the 2016 US Presidential Debates.
+This project performs data cleaning, feature engineering, and prediction models on transcripts of each of the 2016 US Presidential Debates.
 
 ## Environment
 

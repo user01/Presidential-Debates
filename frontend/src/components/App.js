@@ -8,13 +8,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <IndexLink to="/">Home</IndexLink>
-        {' | '}
-        <Link to="/fuel-savings">Demo App</Link>
-        {' | '}
-        <Link to="/about">About</Link>
-        <br/>
-        {this.props.children}
+        <div id="header-bar">
+          <IndexLink to="/">Home</IndexLink>
+          {' | '}
+          <Link to="/fuel-savings">Play</Link>
+          {' | '}
+          <Link to="/about">About</Link>
+        </div>
+        <div className="pure-g">
+          <div className="pure-u-1-24 pure-u-sm-1-5"></div>
+          <div className="pure-u-22-24 pure-u-sm-3-5">
+            {this.props.children}
+          </div>
+          <div className="pure-u-1-24 pure-u-sm-1-5"></div>
+        </div>
       </div>
     );
   }

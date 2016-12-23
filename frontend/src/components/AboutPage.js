@@ -6,13 +6,13 @@ import '../styles/about-page.css';
 const AboutPage = () => {
   return (
     <div>
-      <h2 className="alt-header">About</h2>
+      <h2>About</h2>
       <p>
-        This example app is part of the <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot
-        starter kit</a>.
+        The game was derived from a <a href="https://www.kaggle.com/mrisdal/2016-us-presidential-debates">public domain data set on Kaggle</a> of the 2016 US Presidential Debates. The data was cleaned, reduced to features, and modeled with a Random Forest. The result was a ~80% success rate at predicting the speaker of each line in the third and final debate.
       </p>
       <p>
-        <Link to="/badlink">Click this bad link</Link> to see the 404 page.
+        The React boilerplate was created from <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot
+        starter kit</a>.
       </p>
     </div>
   );

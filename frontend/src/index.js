@@ -11,8 +11,12 @@ import './styles/pure-min.css';
 import './styles/grids-responsive-min.css';
 import './styles/styles.scss';
 import { syncHistoryWithStore } from 'react-router-redux';
+// import * as dataResults from '../../generated/model.results.json';
 
+// console.log(dataResults);
 const store = configureStore();
+
+// console.log('hello');
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);

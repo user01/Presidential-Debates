@@ -1,9 +1,12 @@
-import * as dataResults from '../../../generated/model.results.json';
+// import * as dataResults from '../../../generated/model.results.json';
+import {
+  blankState
+} from './generateInitialState.js';
 
-// console.log(dataResults);
+
+
+const game = blankState();
 
 export default {
-  fuelSavings: {
-    dataResults
-  }
+  game
 };

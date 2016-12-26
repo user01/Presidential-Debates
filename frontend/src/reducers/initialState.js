@@ -1,18 +1,9 @@
+import * as dataResults from '../../../generated/model.results.json';
+
+// console.log(dataResults);
+
 export default {
   fuelSavings: {
-    newMpg: '',
-    tradeMpg: '',
-    newPpg: '',
-    tradePpg: '',
-    milesDriven: '',
-    milesDrivenTimeframe: 'week',
-    displayResults: false,
-    dateModified: null,
-    necessaryDataIsProvidedToCalculateSavings: false,
-    savings: {
-      monthly: 0,
-      annual: 0,
-      threeYear: 0
-    }
+    dataResults
   }
 };

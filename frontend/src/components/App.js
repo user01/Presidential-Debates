@@ -11,7 +11,9 @@ class App extends React.Component {
         <div id="header-bar">
           <IndexLink to="/">Home</IndexLink>
           {' | '}
-          <Link to="/fuel-savings">Play</Link>
+          <Link to="/play">Play</Link>
+          {' | '}
+          <Link to="/stats">Stats</Link>
           {' | '}
           <Link to="/about">About</Link>
         </div>

@@ -1,18 +1,24 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+// import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/playActions';
-// import FuelSavingsForm from '../components/FuelSavingsForm';
+import GamePlayForm from '../components/GamePlayForm';
 
 export const PlayPage = (props) => {
-  // <FuelSavingsForm
+  // <GamePlayForm
   // saveFuelSavings={props.actions.saveFuelSavings}
   // calculateFuelSavings={props.actions.calculateFuelSavings}
   // fuelSavings={props.fuelSavings}
   // />
+  // console.log('Play Page Toggle: ', props.game.toggle);
+  console.log('Play Page Props: ', props);
   return (
     <div>
       <h2>Play Page! {props.toggle ? 'yes' : 'no'}</h2>
+      <GamePlayForm
+        toggle={props.toggle}
+        chooseLeft={props.actions.chooseLeft} />
     </div>
   );
 };
@@ -23,8 +29,10 @@ export const PlayPage = (props) => {
 // };
 
 function mapStateToProps(state) {
+  console.log('mapStateToProps',state);
   return {
-    game: state.game
+    // toggle: false
+    toggle: state.game.toggle
   };
 }
 

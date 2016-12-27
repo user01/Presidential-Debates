@@ -11,16 +11,18 @@ import initialState from './initialState';
 // create a copy of the state passed and set new values on the copy.
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
-export default function gameReducer(state = initialState.game, action) {
+export default function gameReducer(state = initialState, action) {
   // let newState;
 
   switch (action.type) {
     case GUESS_CLINTON:
-      return objectAssign({}, state, {});
+      console.log('Picked hil');
+      console.log('Original State', state);
+      const newState = objectAssign({}, state, {toggle: !state.toggle});
+      console.log('New State', newState);
+      return newState;
     case GUESS_TRUMP:
-      return objectAssign({}, state, {});
     case RESET_GAME:
-      return objectAssign({}, state, {});
     //
     // case CALCULATE_FUEL_SAVINGS:
     //   newState = objectAssign({}, state);

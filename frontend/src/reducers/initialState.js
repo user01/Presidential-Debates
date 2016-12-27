@@ -1,12 +1,8 @@
-// import * as dataResults from '../../../generated/model.results.json';
-import {
-  blankState
-} from './generateInitialState.js';
-
-
-
-const game = blankState();
+import * as dataResults from '../../../generated/model.results.json';
 
 export default {
-  game
+  game: {
+    toggle: false,
+    dataResults
+  }
 };

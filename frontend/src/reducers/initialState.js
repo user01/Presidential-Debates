@@ -1,8 +1,7 @@
-import * as dataResults from '../../../generated/model.results.json';
+
+import emptyGameState from './emptyGameState.js';
 
 export default {
-  game: {
     toggle: false,
-    dataResults
-  }
+    state: emptyGameState()
 };

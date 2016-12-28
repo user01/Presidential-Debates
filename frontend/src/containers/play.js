@@ -29,9 +29,9 @@ export const PlayPage = (props) => {
 // };
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps',state);
+  console.log('mapStateToProps', state);
   return {
-    // toggle: false
+    presidental_statements: state.game.state,
     toggle: state.game.toggle
   };
 }

@@ -15,10 +15,13 @@ export const PlayPage = (props) => {
   console.log('Play Page Props: ', props);
   return (
     <div>
-      <h2>Play Page! {props.toggle ? 'yes' : 'no'}</h2>
+      <h2>Who said this?</h2>
       <GamePlayForm
         toggle={props.toggle}
-        chooseLeft={props.actions.chooseLeft} />
+        data={props.presidental_statements}
+        chooseLeft={props.actions.chooseLeft}
+        chooseRight={props.actions.chooseRight}
+        />
     </div>
   );
 };

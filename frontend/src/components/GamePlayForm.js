@@ -1,18 +1,19 @@
 import React from 'react';
-// import FuelSavingsResults from './FuelSavingsResults';
+import ScoreResults from './ScoreResults';
 // import FuelSavingsTextInput from './FuelSavingsTextInput';
-import Chance from 'chance';
+import R from 'ramda';
 
 class GamePlayForm extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.left = () => {
-      console.log(this);
       this.props.chooseLeft();
     };
-    // this.onTimeframeChange = this.onTimeframeChange.bind(this);
-    // this.fuelSavingsKeypress = this.fuelSavingsKeypress.bind(this);
+    this.right = () => {
+      console.log('Right', this);
+      this.props.chooseRight();
+    };
   }
 
   // onTimeframeChange(e) {
@@ -20,16 +21,26 @@ class GamePlayForm extends React.Component {
   // }
 
   render() {
+    console.log("Form props ", this.props);
     // const {fuelSavings} = this.props;
 
-    console.log('Play Form Toggle: ', this.props.toggle);
-    console.log(this.props);
-    var chance = new Chance(this.props.toggle ? 451 : 343);
+    const currentElm = R.find(R.propEq('guess', 'none'), this.props.data);
+
+    if (currentElm == null) {
+      console.warn("!!!!!!! no elements match - should show game over");
+    }
+    console.log(currentElm);
+
+    const fn = () => {
+      console.log('GO!');
+    }
+
     return (
       <div>
-        <h2>Game Play! {!this.props.toggle ? 'yes' : 'no'}</h2>
-        <h2>Chancy: {chance.sentence()}</h2>
-        <input type="submit" value="Clinton" onClick={this.left}/>
+        <button className="pure-button" onClick={this.left}>Clinton</button>
+        <button className="pure-button" onClick={this.right}>Trump</button>
+        <ScoreResults results={this.props.data} />
+        <p>{currentElm.Text}</p>
       </div>
     );
   }

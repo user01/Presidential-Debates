@@ -1,0 +1,76 @@
+#header-bar {
+  text-align: right;
+  padding-right: 2em;
+  padding-top: 0.3em;
+}
+
+.center {
+  text-align: center;
+}
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-candidate {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-clinton {
+  background: rgb(35,32,102);
+}
+.button-trump {
+  background: rgb(233,29,14);
+}
+
+.postive {
+  color: green;
+}
+.negative {
+  color: red;
+}
+
+
+.panel {
+  margin-top: 0.75em;
+  margin-bottom: 1em;
+  border: 1px solid rgba(99, 99, 99, 0.41);
+  border-radius: 0.25em;
+  -webkit-box-shadow: 0 0.1em 0.1em rgba(0,0,0,.05);
+  box-shadow: 0 0.1em 0.1em rgba(0,0,0,.05);
+}
+.panel-body {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.striped div:nth-child(2n-1) {
+    background-color: #f2f2f2;
+}
+
+.stretch{
+  width:100%;
+}
+
+.table-line {
+  margin: 0.05em 0;
+}
+
+
+.person-color {
+  color: #FF7F0E;
+}
+.computer-color {
+  color: #1F77B4;
+}
+.person-glow {
+  text-shadow: #FF7F0E 0px 0px 5px;
+}
+.computer-glow {
+  text-shadow: #1F77B4 0px 0px 5px;
+}
+.computer-glow-heavy {
+  text-shadow: #1F77B4 0px 0px 1px;
+}

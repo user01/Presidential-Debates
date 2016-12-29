@@ -7,6 +7,9 @@
 .center {
   text-align: center;
 }
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
 
 .button-candidate {
   color: white;
@@ -25,4 +28,20 @@
 }
 .negative {
   color: red;
+}
+
+
+.panel {
+  margin-top: 0.75em;
+  margin-bottom: 1em;
+  border: 1px solid rgba(99, 99, 99, 0.41);
+  border-radius: 0.25em;
+  -webkit-box-shadow: 0 0.1em 0.1em rgba(0,0,0,.05);
+  box-shadow: 0 0.1em 0.1em rgba(0,0,0,.05);
+}
+.panel-body {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }

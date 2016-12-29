@@ -15,9 +15,9 @@ const LastResults = ({results}) => {
 
   if (targetIndex < 0) {
     return (
-      <div className="pure-g">
+      <div className="pure-g panel">
         <div className="pure-u-1 center">
-          <p>Start Playing!</p>
+          <p>Choose who spoke the line in the debate.</p>
         </div>
       </div>
     );
@@ -38,23 +38,25 @@ const LastResults = ({results}) => {
 
 
   return (
-    <div className="pure-g">
-      <div className="pure-u-1-2">
-        <p>Human
+    <div className="pure-g panel">
+      <div className="pure-u-1-24 pure-u-sm-1-6"></div>
+      <div className="pure-u-11-24 pure-u-sm-1-3">
+        <p className="center">You
         &nbsp;
         {percentize(correctHumanGuesses.length, guessElms.length)}
         &nbsp;
         {lastElm.guess == lastElm.Speaker ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
         </p>
       </div>
-      <div className="pure-u-1-2">
-        <p>Computer
+      <div className="pure-u-11-24 pure-u-sm-1-3">
+        <p className="center">Computer
         &nbsp;
         {percentize(correctComputerGuesses.length, guessElms.length)}
         &nbsp;
         {lastElm.CorrectPrediction == true ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
         </p>
       </div>
+      <div className="pure-u-1-24 pure-u-sm-1-6"></div>
     </div>
   );
 };

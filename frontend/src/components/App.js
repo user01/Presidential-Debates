@@ -10,13 +10,11 @@ class App extends React.Component {
       <div>
         <div id="header-bar">
           <span>{"2016 Presidental Debates "}</span>
-          <IndexLink to="/">Home</IndexLink>
+          <IndexLink to="/">About</IndexLink>
           {' | '}
           <Link to="/play">Play</Link>
           {' | '}
           <Link to="/stats">Stats</Link>
-          {' | '}
-          <Link to="/about">About</Link>
         </div>
         <div className="pure-g">
           <div className="pure-u-1-24 pure-u-sm-1-5"></div>

@@ -25,7 +25,9 @@ class GamePlayForm extends React.Component {
     if (currentElm == null) {
       console.warn("!!!!!!! no elements match - should show game over");
     }
-
+    const left_style = {
+      'padding-right': '2em'
+    };
     return (
       <div>
         <LastResults results={this.props.data} />
@@ -38,9 +40,9 @@ class GamePlayForm extends React.Component {
           </div>
         </div>
         <p>
-          <i className="fa fa-quote-left" aria-hidden="true"></i>
+          <i className="fa fa-quote-left" style={{'padding-right': '0.5em'}} aria-hidden="true"></i>
           {currentElm.Text}
-          <i className="fa fa-quote-right" aria-hidden="true"></i>
+          <i className="fa fa-quote-right" style={{'padding-left': '0.2em', 'float':'right'}} aria-hidden="true"></i>
         </p>
       </div>
     );

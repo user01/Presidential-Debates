@@ -4,6 +4,10 @@
   padding-top: 0.3em;
 }
 
+body {
+  background: #f9f9f9;
+}
+
 .center {
   text-align: center;
 }
@@ -81,5 +85,51 @@
 @media screen and (min-width: 35.5em) {
   .pure-u-sm-hide {
     display: none;
+  }
+}
+
+html {
+  color: #171717;
+  line-height: 1.2;
+  font-size: 1em;
+}
+
+@media screen and (min-width: 35.5em) {
+  html {
+    // color: red;
+    line-height: 1.2;
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  html {
+    // color: orange;
+    line-height: 1.4;
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 48em) and (orientation: portrait){
+  html {
+    // color: orange;
+    // text-decoration: underline;
+    font-size: 2.4em;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  html {
+    // color: maroon;
+    line-height: 1.3;
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  html {
+    // color: green;
+    line-height: 1.5;
+    font-size: 2.2em;
   }
 }

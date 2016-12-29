@@ -76,9 +76,9 @@ const SummaryStats = ({results}) => {
             <h3 className="center"><i className="fa fa-user" aria-hidden="true"></i></h3>
           </div>
           <div className="pure-u-2-3">
-            <p>Of {guessedLines.length} lines, you were right {percentize(guessLinesCorrect.length, guessedLines.length)} of the time.</p>
-            <p>For Trump, you were right {percentize(guessTrumpCorrect.length, guessedLinesTrump.length)} of the time.</p>
-            <p>For Clinton, you were right {percentize(guessClintonCorrect.length, guessedLinesClinton.length)} of the time.</p>
+            <h3>Accuracy: {percentize(guessLinesCorrect.length, guessedLines.length)}</h3>
+            <p>For Trump ({guessedLinesTrump.length} lines), you were right {percentize(guessTrumpCorrect.length, guessedLinesTrump.length)} of the time.</p>
+            <p>For Clinton ({guessedLinesClinton.length} lines), you were right {percentize(guessClintonCorrect.length, guessedLinesClinton.length)} of the time.</p>
           </div>
         </div>
         <div className="pure-g panel">
@@ -87,9 +87,9 @@ const SummaryStats = ({results}) => {
             <h3 className="center"><i className="fa fa-cogs" aria-hidden="true"></i></h3>
           </div>
           <div className="pure-u-2-3">
-            <p>Of {guessedLines.length} lines, it was right {percentize(computerLinesCorrect.length, guessedLines.length)} of the time.</p>
-            <p>For Trump, it was right {percentize(computerTrumpCorrect.length, guessedLinesTrump.length)} of the time.</p>
-            <p>For Clinton, it was right {percentize(computerClintonCorrect.length, guessedLinesClinton.length)} of the time.</p>
+            <h3>Accuracy: {percentize(computerLinesCorrect.length, guessedLines.length)}</h3>
+            <p>For Trump ({guessedLinesTrump.length} lines), it was right {percentize(computerTrumpCorrect.length, guessedLinesTrump.length)} of the time.</p>
+            <p>For Clinton ({guessedLinesClinton.length} lines), it was right {percentize(computerClintonCorrect.length, guessedLinesClinton.length)} of the time.</p>
           </div>
         </div>
       </div>

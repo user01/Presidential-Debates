@@ -15,15 +15,16 @@ const markResult = (result) => {
 
 const AllStats = ({results}) => {
 
+  console.log(results);
   const elms = R.pipe(
     R.addIndex(R.map)((elm, idx) => {
-      if (!elm || elm.guess == 'none') return false;
+      if (!elm.Text || elm.guess == 'none') return false;
 
       const text_sample = elm.Text.length > 50 ? elm.Text.substring(0,50) + '…' : elm.Text;
 
       return (
         <tr key={idx}>
-          <td><p className="table-line center">{chance.capitalize(elm.guess)}</p></td>
+          <td><p className="table-line center" style={{color:elm.Speaker == 'trump' ? '#a50202' : '#000092'}}>{chance.capitalize(elm.Speaker)}</p></td>
           <td><p className="table-line center">{markResult(elm.guess == elm.Speaker)}</p></td>
           <td><p className="table-line center">{markResult(elm.CorrectPrediction)}</p></td>
           <td><p className="table-line center">{prob_display(elm)}</p></td>

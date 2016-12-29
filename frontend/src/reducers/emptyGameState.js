@@ -10,7 +10,14 @@ export const emptyGameState = () => {
     R.map(R.merge(R.__, {
       guess: 'none'
     })),
-    (set) => chance.shuffle(set)
+    (set) => chance.shuffle(set),
+    R.filter(
+      R.pipe(
+        R.keys,
+        R.length,
+        R.gt(20)
+      )
+    ), // This hack purges the 'default' key set by chance.shuffle
   )(dataResults);
 };
 

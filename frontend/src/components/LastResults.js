@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import R from 'ramda';
+import StatGo from './StatGo.jsx';
 
 const percentize = (num,den) => {
   if (den == 0) {
@@ -39,24 +40,38 @@ const LastResults = ({results}) => {
 
   return (
     <div className="pure-g panel">
-      <div className="pure-u-1-24 pure-u-sm-1-6"></div>
-      <div className="pure-u-11-24 pure-u-sm-1-3">
-        <p className="center">You
-        &nbsp;
-        {percentize(correctHumanGuesses.length, guessElms.length)}
-        &nbsp;
-        {lastElm.guess == lastElm.Speaker ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
-        </p>
+      <div className="pure-u-1">
+        <div className="pure-g">
+
+          <div className="pure-u-1-24 pure-u-sm-hide"></div>
+          <div className="pure-u-7-24 pure-u-sm-1-3">
+            <p className="center button-padding">
+            <i className="fa fa-user person-color" aria-hidden="true"></i>
+            &nbsp;
+            {percentize(correctHumanGuesses.length, guessElms.length)}
+            &nbsp;
+            {lastElm.guess == lastElm.Speaker ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
+            </p>
+          </div>
+          <div className="pure-u-8-24 pure-u-sm-1-3">
+            <StatGo />
+          </div>
+          <div className="pure-u-7-24 pure-u-sm-1-3">
+            <p className="center button-padding"><i className="fa fa-cogs computer-color" aria-hidden="true"></i>
+            &nbsp;
+            {percentize(correctComputerGuesses.length, guessElms.length)}
+            &nbsp;
+            {lastElm.CorrectPrediction == true ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
+            </p>
+          </div>
+          <div className="pure-u-1-24 pure-u-sm-hide"></div>
+        </div>
+        <div className="pure-g">
+          <div className="pure-u-1">
+
+          </div>
+        </div>
       </div>
-      <div className="pure-u-11-24 pure-u-sm-1-3">
-        <p className="center">Computer
-        &nbsp;
-        {percentize(correctComputerGuesses.length, guessElms.length)}
-        &nbsp;
-        {lastElm.CorrectPrediction == true ? <i className="fa fa-arrow-up postive" aria-hidden="true"></i> : <i className="fa fa-arrow-down negative" aria-hidden="true"></i>}
-        </p>
-      </div>
-      <div className="pure-u-1-24 pure-u-sm-1-6"></div>
     </div>
   );
 };

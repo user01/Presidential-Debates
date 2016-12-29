@@ -1,5 +1,6 @@
 import React from 'react';
 import LastResults from './LastResults';
+import StatGo from './StatGo.jsx';
 import {Link} from 'react-router';
 
 import R from 'ramda';
@@ -28,10 +29,7 @@ class GamePlayForm extends React.Component {
           <LastResults results={this.props.data} />
           <h3 className="center">Congratulations!</h3>
           <p>You have completed the entire debate. Would you care to see your <Link to="/stats">statistics against the algorithm</Link>?</p>
-          <p className="center">
-            <Link className="pure-button button-success button-candidate" to="/stats">Statistics</Link>
-          </p>
-
+          <StatGo />
         </div>
       );
     }

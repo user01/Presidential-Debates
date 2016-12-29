@@ -4,6 +4,7 @@ import {
   Link
 } from 'react-router';
 import AllStats from './stats/AllStats.js';
+import SummaryStats from './stats/SummaryStats.js';
 
 
 class StatsComponent extends React.Component {
@@ -30,6 +31,7 @@ class StatsComponent extends React.Component {
 
     return (
       <div>
+        <SummaryStats results={results} />
         <AllStats results={results} />
       </div>
     );

@@ -7,7 +7,7 @@ import StatsComponent from '../components/StatsComponent';
 export const StatsPage = ({state}) => {
   return (
     <div>
-      <h1 className="center">Current Statistics</h1>
+      <h1 className="center">Statistics</h1>
       <StatsComponent
         data={state}
         />

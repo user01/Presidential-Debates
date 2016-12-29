@@ -23,7 +23,7 @@ const AllStats = ({results}) => {
 
       return (
         <tr key={idx}>
-          <td><p className="table-line">{chance.capitalize(elm.guess)}</p></td>
+          <td><p className="table-line center">{chance.capitalize(elm.guess)}</p></td>
           <td><p className="table-line center">{markResult(elm.guess == elm.Speaker)}</p></td>
           <td><p className="table-line center">{markResult(elm.CorrectPrediction)}</p></td>
           <td><p className="table-line center">{prob_display(elm)}</p></td>
@@ -33,29 +33,63 @@ const AllStats = ({results}) => {
     }),
     R.filter(R.pipe(R.equals(false), R.not))
   )(results);
-  console.log(results);
 
   const closer = elms.length == results.length ? '' : (<p className="center">And {results.length - elms.length} lines remain untested.</p>);
 
   return (
-    <div className="pure-g">
-      <div className="pure-u-1">
-        <table className="pure-table pure-table-striped stretch">
-          <thead>
-            <tr>
-              <th><p className="center">Speaker</p></th>
-              <th><p className="center"><i className="fa fa-user" aria-hidden="true"></i></p></th>
-              <th><p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p></th>
-              <th><p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p></th>
+    <div>
+      <h2 className="center">All Lines</h2>
+      <div className="pure-g">
+        <div className="pure-u-1-3">
+          <p className="center"><i className="fa fa-comments-o" aria-hidden="true"></i></p>
+        </div>
+        <div className="pure-u-2-3">
+          <p>Who spoke the line.</p>
+        </div>
+      </div>
+      <div className="pure-g">
+        <div className="pure-u-1-3">
+          <p className="center"><i className="fa fa-user" aria-hidden="true"></i></p>
+        </div>
+        <div className="pure-u-2-3">
+          <p>Marks if you were correct.</p>
+        </div>
+      </div>
+      <div className="pure-g">
+        <div className="pure-u-1-3">
+          <p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p>
+        </div>
+        <div className="pure-u-2-3">
+          <p>Marks if the model was correct.</p>
+        </div>
+      </div>
+      <div className="pure-g">
+        <div className="pure-u-1-3">
+          <p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p>
+        </div>
+        <div className="pure-u-2-3">
+          <p>Marks what probability the model gave to the correct classification.</p>
+        </div>
+      </div>
+      <div className="pure-g">
+        <div className="pure-u-1">
+          <table className="pure-table pure-table-striped stretch">
+            <thead>
+              <tr>
+                <th><p className="center"><i className="fa fa-comments-o" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-user" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p></th>
 
-            </tr>
-          </thead>
+              </tr>
+            </thead>
 
-          <tbody>
-            {elms}
-          </tbody>
-        </table>
-        {closer}
+            <tbody>
+              {elms}
+            </tbody>
+          </table>
+          {closer}
+        </div>
       </div>
     </div>
   );

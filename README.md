@@ -1,15 +1,25 @@
 
 # Presidential Debates
 
-This project performs data cleaning, feature engineering, and prediction models on transcripts of each of the 2016 US Presidential Debates.
+This project performs data cleaning, feature engineering, and prediction models
+on transcripts of each of the 2016 US Presidential Debates.
 
 ## Environment
 
-The project makes use of the [conda package manager](http://conda.pydata.org/) to store dependencies. The file `environment.yml` contains the required information. Load the default environment with:
+The project makes use of the [conda package manager](http://conda.pydata.org/)
+to store dependencies. The file `environment.yml` contains the required
+information. Load the default environment with:
 
 ```bash
 conda env create -f environment.yml
 source activate presidential-debates
+```
+
+To build the frontend code, [node](https://nodejs.org/) dependencies must be installed.
+
+```bash
+cd frontend
+npm install
 ```
 
 ## Run

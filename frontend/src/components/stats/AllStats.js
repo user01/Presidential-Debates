@@ -15,7 +15,6 @@ const markResult = (result) => {
 
 const AllStats = ({results}) => {
 
-  console.log(results);
   const elms = R.pipe(
     R.addIndex(R.map)((elm, idx) => {
       if (!elm.Text || elm.guess == 'none') return false;

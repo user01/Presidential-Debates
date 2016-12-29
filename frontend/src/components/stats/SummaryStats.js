@@ -12,8 +12,6 @@ const percentize = (num,den) => {
 
 const SummaryStats = ({results}) => {
 
-  console.log(results);
-
   const clintonLines = R.filter(R.propEq('Speaker','clinton'), results);
 
   const guessedLines = R.filter(R.pipe(R.propEq('guess','none'),R.not), results);
@@ -61,7 +59,6 @@ const SummaryStats = ({results}) => {
   return (
     <div className="pure-g">
       <div className="pure-u-1">
-        <h3 className="center">Summary Stats</h3>
         <div className="pure-g">
           <div className="pure-u-1">
             <p>The <a target="_blank" href="https://en.wikipedia.org/wiki/United_States_presidential_debates,_2016#Third_presidential_debate_.28University_of_Nevada.2C_Las_Vegas.29">

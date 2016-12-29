@@ -68,7 +68,7 @@ const SummaryStats = ({results}) => {
           </div>
         </div>
         <div className="pure-g panel">
-          <div className="pure-u-1-3">
+          <div className="pure-u-1-3 person-color">
             <h3 className="center">You</h3>
             <h3 className="center"><i className="fa fa-user" aria-hidden="true"></i></h3>
           </div>
@@ -79,7 +79,7 @@ const SummaryStats = ({results}) => {
           </div>
         </div>
         <div className="pure-g panel">
-          <div className="pure-u-1-3">
+          <div className="pure-u-1-3 computer-color">
             <h3 className="center">Computer</h3>
             <h3 className="center"><i className="fa fa-cogs" aria-hidden="true"></i></h3>
           </div>

@@ -57,3 +57,20 @@
 .table-line {
   margin: 0.05em 0;
 }
+
+
+.person-color {
+  color: #FF7F0E;
+}
+.computer-color {
+  color: #1F77B4;
+}
+.person-glow {
+  text-shadow: #FF7F0E 0px 0px 5px;
+}
+.computer-glow {
+  text-shadow: #1F77B4 0px 0px 5px;
+}
+.computer-glow-heavy {
+  text-shadow: #1F77B4 0px 0px 1px;
+}

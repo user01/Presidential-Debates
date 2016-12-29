@@ -24,9 +24,9 @@ const AllStats = ({results}) => {
       return (
         <tr key={idx}>
           <td><p className="table-line center" style={{color:elm.Speaker == 'trump' ? '#a50202' : '#000092'}}>{chance.capitalize(elm.Speaker)}</p></td>
-          <td><p className="table-line center">{markResult(elm.guess == elm.Speaker)}</p></td>
-          <td><p className="table-line center">{markResult(elm.CorrectPrediction)}</p></td>
-          <td><p className="table-line center">{prob_display(elm)}</p></td>
+          <td><p className="table-line center person-glow">{markResult(elm.guess == elm.Speaker)}</p></td>
+          <td><p className="table-line center computer-glow">{markResult(elm.CorrectPrediction)}</p></td>
+          <td><p className="table-line center computer-glow-heavy">{prob_display(elm)}</p></td>
 
         </tr>
       );
@@ -38,7 +38,7 @@ const AllStats = ({results}) => {
 
   return (
     <div>
-      <h2 className="center">All Lines</h2>
+      <h2 className="center">All Line Records</h2>
       <div className="pure-g">
         <div className="pure-u-1-3">
           <p className="center"><i className="fa fa-comments-o" aria-hidden="true"></i></p>
@@ -49,7 +49,7 @@ const AllStats = ({results}) => {
       </div>
       <div className="pure-g">
         <div className="pure-u-1-3">
-          <p className="center"><i className="fa fa-user" aria-hidden="true"></i></p>
+          <p className="center"><i className="fa fa-user person-color" aria-hidden="true"></i></p>
         </div>
         <div className="pure-u-2-3">
           <p>Marks if you were correct.</p>
@@ -57,7 +57,7 @@ const AllStats = ({results}) => {
       </div>
       <div className="pure-g">
         <div className="pure-u-1-3">
-          <p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p>
+          <p className="center"><i className="fa fa-cogs computer-color" aria-hidden="true"></i></p>
         </div>
         <div className="pure-u-2-3">
           <p>Marks if the model was correct.</p>
@@ -65,7 +65,7 @@ const AllStats = ({results}) => {
       </div>
       <div className="pure-g">
         <div className="pure-u-1-3">
-          <p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p>
+          <p className="center"><i className="fa fa-percent computer-color" aria-hidden="true"></i></p>
         </div>
         <div className="pure-u-2-3">
           <p>Marks what probability the model gave to the correct classification.</p>
@@ -77,9 +77,9 @@ const AllStats = ({results}) => {
             <thead>
               <tr>
                 <th><p className="center"><i className="fa fa-comments-o" aria-hidden="true"></i></p></th>
-                <th><p className="center"><i className="fa fa-user" aria-hidden="true"></i></p></th>
-                <th><p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p></th>
-                <th><p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-user person-color" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-cogs computer-color" aria-hidden="true"></i></p></th>
+                <th><p className="center"><i className="fa fa-percent computer-color" aria-hidden="true"></i></p></th>
 
               </tr>
             </thead>

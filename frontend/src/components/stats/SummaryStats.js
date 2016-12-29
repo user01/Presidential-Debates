@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import R from 'ramda';
-import Chance from 'chance';
+import TitleCard from './TitleCard.jsx';
 
 
 const percentize = (num,den) => {
@@ -10,42 +10,6 @@ const percentize = (num,den) => {
   return Math.round(num / den * 100) + '%';
 };
 
-const generateLeader = (humanCorrect, computerCorrect) => {
-  if (humanCorrect == 0 && computerCorrect == 0) {
-    return (
-      <h3 className="center">
-        No Data, so far.
-      </h3>
-    );
-  }
-  if (humanCorrect == computerCorrect) {
-    return (
-      <h3 className="center">
-        Perfectly Even Score
-      </h3>
-    );
-  }
-  if (humanCorrect > computerCorrect) {
-    return (
-      <h3 className="center">
-        Triumph for Humanity!
-      </h3>
-    );
-  }
-  if (humanCorrect < computerCorrect) {
-    return (
-      <h3 className="center">
-        The Machine pulls ahead in the rankings.
-      </h3>
-    );
-  }
-
-  return (
-    <div>
-      <h3 className="center">Bug in code.</h3>
-    </div>
-  );
-}
 
 const SummaryStats = ({results}) => {
 
@@ -55,26 +19,16 @@ const SummaryStats = ({results}) => {
   const guessLinesCorrect = R.filter((elm)=>{
     return elm.guess == elm.Speaker;
   }, guessedLines);
-  const guessLinesWrong = R.filter((elm)=>{
-    return elm.guess != elm.Speaker;
-  }, guessedLines);
 
   const guessedLinesTrump = R.filter(R.propEq('Speaker','trump'), guessedLines);
   const guessTrumpCorrect = R.filter((elm)=>{
     return elm.guess == elm.Speaker;
-  }, guessedLinesTrump);
-  const guessTrumpWrong = R.filter((elm)=>{
-    return elm.guess != elm.Speaker;
   }, guessedLinesTrump);
 
   const guessedLinesClinton = R.filter(R.propEq('Speaker','clinton'), guessedLines);
   const guessClintonCorrect = R.filter((elm)=>{
     return elm.guess == elm.Speaker;
   }, guessedLinesClinton);
-  const guessClintonWrong = R.filter((elm)=>{
-    return elm.guess != elm.Speaker;
-  }, guessedLinesClinton);
-
 
   const computerLinesCorrect = R.filter((elm)=>{
     return elm.CorrectPrediction;
@@ -82,17 +36,10 @@ const SummaryStats = ({results}) => {
   const computerTrumpCorrect = R.filter((elm)=>{
     return elm.CorrectPrediction;
   }, guessedLinesTrump);
-  const computerTrumpWrong = R.filter((elm)=>{
-    return elm.CorrectPrediction;
-  }, guessedLinesTrump);
 
   const computerClintonCorrect = R.filter((elm)=>{
     return elm.CorrectPrediction;
   }, guessedLinesClinton);
-  const computerClintonWrong = R.filter((elm)=>{
-    return elm.CorrectPrediction;
-  }, guessedLinesClinton);
-
 
 
   return (
@@ -100,7 +47,7 @@ const SummaryStats = ({results}) => {
       <div className="pure-u-1">
         <div className="pure-g">
           <div className="pure-u-1">
-            {generateLeader(guessLinesCorrect.length, computerLinesCorrect.length)}
+            <TitleCard humanCorrect={guessLinesCorrect.length} computerCorrect={computerLinesCorrect.length} />
             <p>The <a target="_blank" href="https://en.wikipedia.org/wiki/United_States_presidential_debates,_2016#Third_presidential_debate_.28University_of_Nevada.2C_Las_Vegas.29">
               third presidental debate</a> consisted of {results.length} spoken lines.
             Hillary Clinton spoke {clintonLines.length} lines, {percentize(clintonLines.length, results.length)} of the total.

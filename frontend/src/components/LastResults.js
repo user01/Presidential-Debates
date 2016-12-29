@@ -45,7 +45,8 @@ const LastResults = ({results}) => {
 
           <div className="pure-u-1-24 pure-u-sm-hide"></div>
           <div className="pure-u-7-24 pure-u-sm-1-3">
-            <p className="center button-padding">You
+            <p className="center button-padding">
+            <i className="fa fa-user person-color" aria-hidden="true"></i>
             &nbsp;
             {percentize(correctHumanGuesses.length, guessElms.length)}
             &nbsp;
@@ -56,7 +57,7 @@ const LastResults = ({results}) => {
             <StatGo />
           </div>
           <div className="pure-u-7-24 pure-u-sm-1-3">
-            <p className="center button-padding">Computer
+            <p className="center button-padding"><i className="fa fa-cogs computer-color" aria-hidden="true"></i>
             &nbsp;
             {percentize(correctComputerGuesses.length, guessElms.length)}
             &nbsp;

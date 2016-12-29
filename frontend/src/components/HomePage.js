@@ -11,6 +11,24 @@ const HomePage = () => {
           <p>Guess who spoke in the October 19, 2016 presidental debate!</p>
           <p>Compete against a Random Forest prediction model!</p>
 
+          <div className="pure-g">
+            <div className="pure-u-5-12 person-color">
+              <p className="center">
+                You <i className="fa fa-user" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div className="pure-u-1-6">
+              <p className="center">
+              VS
+              </p>
+            </div>
+            <div className="pure-u-5-12 computer-color">
+              <p className="center">
+                Computer <i className="fa fa-cogs" aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+
           <p className="center">
             <Link className="pure-button button-success button-candidate" to="/play">Play Now!</Link>
           </p>

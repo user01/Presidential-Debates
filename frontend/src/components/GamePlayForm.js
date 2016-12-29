@@ -1,5 +1,4 @@
 import React from 'react';
-import ScoreResults from './ScoreResults';
 import LastResults from './LastResults';
 import {Link} from 'react-router';
 

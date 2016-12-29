@@ -6,7 +6,7 @@ const percentize = (num,den) => {
     return '??%';
   }
   return Math.round(num / den * 100) + '%';
-}
+};
 
 const LastResults = ({results}) => {
 

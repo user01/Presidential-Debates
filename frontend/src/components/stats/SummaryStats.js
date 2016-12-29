@@ -77,20 +77,20 @@ const SummaryStats = ({results}) => {
 
 
   const computerLinesCorrect = R.filter((elm)=>{
-    return elm.SpeakerPredicted == elm.Speaker;
+    return elm.CorrectPrediction;
   }, guessedLines);
   const computerTrumpCorrect = R.filter((elm)=>{
-    return elm.SpeakerPredicted == elm.Speaker;
+    return elm.CorrectPrediction;
   }, guessedLinesTrump);
   const computerTrumpWrong = R.filter((elm)=>{
-    return elm.SpeakerPredicted != elm.Speaker;
+    return elm.CorrectPrediction;
   }, guessedLinesTrump);
 
   const computerClintonCorrect = R.filter((elm)=>{
-    return elm.SpeakerPredicted == elm.Speaker;
+    return elm.CorrectPrediction;
   }, guessedLinesClinton);
   const computerClintonWrong = R.filter((elm)=>{
-    return elm.SpeakerPredicted != elm.Speaker;
+    return elm.CorrectPrediction;
   }, guessedLinesClinton);
 
 

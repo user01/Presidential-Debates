@@ -9,6 +9,7 @@ class App extends React.Component {
     return (
       <div>
         <div id="header-bar">
+          <span>{"Anyway, who's line is it?"}</span>
           <IndexLink to="/">Home</IndexLink>
           {' | '}
           <Link to="/play">Play</Link>

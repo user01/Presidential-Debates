@@ -42,7 +42,7 @@ class GamePlayForm extends React.Component {
         <button className="pure-button" onClick={this.left}>Clinton</button>
         <button className="pure-button" onClick={this.right}>Trump</button>
         <ScoreResults results={this.props.data} />
-        <p>{currentElm.Text}</p>
+        <p><i className="fa fa-camera-retro"></i> {currentElm.Text}</p>
       </div>
     );
   }

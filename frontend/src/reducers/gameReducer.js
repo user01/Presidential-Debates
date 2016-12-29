@@ -9,10 +9,10 @@ import R from 'ramda';
 
 const newStateBasedOnGuess = (guess_name, state) => {
 
-  console.log('Original State', state);
+  // console.log('Original State', state);
 
   const guessingIndex = R.findIndex(R.propEq('guess', 'none'), state.state);
-  console.log(`New index ${guessingIndex}`);
+  // console.log(`New index ${guessingIndex}`);
   // if there isn't a valid guess group to be made, ignore it
   if (guessingIndex == null) {
     return state;
@@ -26,7 +26,7 @@ const newStateBasedOnGuess = (guess_name, state) => {
       return R.merge(elm, { guess: guess_name });
     })(state.state)
   });
-  console.log('New State', newState);
+  // console.log('New State', newState);
   return newState;
 };
 

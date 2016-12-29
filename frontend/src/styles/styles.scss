@@ -3,3 +3,26 @@
   padding-right: 2em;
   padding-top: 0.3em;
 }
+
+.center {
+  text-align: center;
+}
+
+.button-candidate {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-clinton {
+  background: rgb(35,32,102);
+}
+.button-trump {
+  background: rgb(233,29,14);
+}
+
+.postive {
+  color: green;
+}
+.negative {
+  color: red;
+}

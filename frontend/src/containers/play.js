@@ -12,10 +12,9 @@ export const PlayPage = (props) => {
   // fuelSavings={props.fuelSavings}
   // />
   // console.log('Play Page Toggle: ', props.game.toggle);
-  console.log('Play Page Props: ', props);
+  // console.log('Play Page Props: ', props);
   return (
     <div>
-      <h2>Who said this?</h2>
       <GamePlayForm
         toggle={props.toggle}
         data={props.presidental_statements}
@@ -26,13 +25,8 @@ export const PlayPage = (props) => {
   );
 };
 
-// PlayPage.propTypes = {
-//   actions: PropTypes.object.isRequired,
-//   fuelSavings: PropTypes.object.isRequired
-// };
-
 function mapStateToProps(state) {
-  console.log('mapStateToProps', state);
+  // console.log('mapStateToProps', state);
   return {
     presidental_statements: state.game.state,
     toggle: state.game.toggle

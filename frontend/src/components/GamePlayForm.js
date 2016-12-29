@@ -17,32 +17,31 @@ class GamePlayForm extends React.Component {
     };
   }
 
-  // onTimeframeChange(e) {
-  //   this.props.calculateFuelSavings(this.props.fuelSavings, 'milesDrivenTimeframe', e.target.value);
-  // }
-
   render() {
-    console.log("Form props ", this.props);
-    // const {fuelSavings} = this.props;
+    // console.log("Form props ", this.props);
 
     const currentElm = R.find(R.propEq('guess', 'none'), this.props.data);
 
     if (currentElm == null) {
       console.warn("!!!!!!! no elements match - should show game over");
     }
-    console.log(currentElm);
-
-    const fn = () => {
-      console.log('GO!');
-    }
 
     return (
       <div>
         <LastResults results={this.props.data} />
-        <button className="pure-button" onClick={this.left}>Clinton</button>
-        <button className="pure-button" onClick={this.right}>Trump</button>
-        <ScoreResults results={this.props.data} />
-        <p><i className="fa fa-camera-retro"></i> {currentElm.Text}</p>
+        <div className="pure-g">
+          <div className="pure-u-1-2 center">
+            <button className="pure-button button-candidate button-clinton" onClick={this.left}>Clinton</button>
+          </div>
+          <div className="pure-u-1-2 center">
+            <button className="pure-button button-candidate button-trump" onClick={this.right}>Trump</button>
+          </div>
+        </div>
+        <p>
+          <i className="fa fa-quote-left" aria-hidden="true"></i>
+          {currentElm.Text}
+          <i className="fa fa-quote-right" aria-hidden="true"></i>
+        </p>
       </div>
     );
   }

@@ -17,11 +17,11 @@ class App extends React.Component {
           <Link to="/stats">Stats</Link>
         </div>
         <div className="pure-g">
-          <div className="pure-u-1-24 pure-u-sm-1-5"></div>
-          <div className="pure-u-22-24 pure-u-sm-3-5">
+          <div className="pure-u-1-24 pure-u-lg-1-5"></div>
+          <div className="pure-u-22-24 pure-u-lg-3-5">
             {this.props.children}
           </div>
-          <div className="pure-u-1-24 pure-u-sm-1-5"></div>
+          <div className="pure-u-1-24 pure-u-lg-1-5"></div>
         </div>
       </div>
     );

@@ -45,3 +45,15 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.striped div:nth-child(2n-1) {
+    background-color: #f2f2f2;
+}
+
+.stretch{
+  width:100%;
+}
+
+.table-line {
+  margin: 0.05em 0;
+}

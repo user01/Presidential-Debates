@@ -7,6 +7,11 @@ const prob_display = (elm) => {
   const prob = elm.Speaker == 'clinton' ? elm.ClintonProbability : elm.TrumpProbability;
   return Math.round(prob * 100) + '%';
 }
+const markResult = (result) => {
+  return result ?
+      (<i className="fa fa-check postive" aria-hidden="true"></i>) :
+      (<i className="fa fa-times negative" aria-hidden="true"></i>);
+}
 
 const AllStats = ({results}) => {
 
@@ -18,11 +23,11 @@ const AllStats = ({results}) => {
 
       return (
         <tr key={idx}>
-          <td>{chance.capitalize(elm.guess)}</td>
-          <td>{chance.capitalize(elm.Speaker)}</td>
-          <td>{chance.capitalize(elm.SpeakerPredicted)}</td>
-          <td>{prob_display(elm)}</td>
-          <td>{text_sample}</td>
+          <td><p className="table-line">{chance.capitalize(elm.guess)}</p></td>
+          <td><p className="table-line center">{markResult(elm.guess == elm.Speaker)}</p></td>
+          <td><p className="table-line center">{markResult(elm.CorrectPrediction)}</p></td>
+          <td><p className="table-line center">{prob_display(elm)}</p></td>
+
         </tr>
       );
     }),
@@ -33,15 +38,16 @@ const AllStats = ({results}) => {
   const closer = elms.length == results.length ? '' : (<p className="center">And {results.length - elms.length} lines remain untested.</p>);
 
   return (
-    <div className="pure-g panel">
+    <div className="pure-g">
       <div className="pure-u-1">
-        <table className="pure-table pure-table-striped">
+        <table className="pure-table pure-table-striped stretch">
           <thead>
             <tr>
-              <th>You</th>
-              <th>Actual</th>
-              <th>Computer</th>
-              <th>Text</th>
+              <th><p className="center">Speaker</p></th>
+              <th><p className="center"><i className="fa fa-user" aria-hidden="true"></i></p></th>
+              <th><p className="center"><i className="fa fa-cogs" aria-hidden="true"></i></p></th>
+              <th><p className="center"><i className="fa fa-percent" aria-hidden="true"></i></p></th>
+
             </tr>
           </thead>
 

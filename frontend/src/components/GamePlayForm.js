@@ -1,6 +1,7 @@
 import React from 'react';
 import ScoreResults from './ScoreResults';
-// import FuelSavingsTextInput from './FuelSavingsTextInput';
+import LastResults from './LastResults';
+
 import R from 'ramda';
 
 class GamePlayForm extends React.Component {
@@ -37,6 +38,7 @@ class GamePlayForm extends React.Component {
 
     return (
       <div>
+        <LastResults results={this.props.data} />
         <button className="pure-button" onClick={this.left}>Clinton</button>
         <button className="pure-button" onClick={this.right}>Trump</button>
         <ScoreResults results={this.props.data} />

@@ -9,13 +9,11 @@ const percentize = (num,den) => {
 }
 
 const ScoreResults = ({results}) => {
-  console.log(results);
 
   const guessElms = R.filter(R.pipe(
     R.propEq('guess', 'none'),
     R.not
   ))(results);
-
 
   const correctHumanGuesses = R.pipe(
     R.filter((elm) => elm.Speaker == elm.guess)

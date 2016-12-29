@@ -14,7 +14,7 @@ const newStateBasedOnGuess = (guess_name, state) => {
   const guessingIndex = R.findIndex(R.propEq('guess', 'none'), state.state);
   // console.log(`New index ${guessingIndex}`);
   // if there isn't a valid guess group to be made, ignore it
-  if (guessingIndex == null) {
+  if (guessingIndex == -1) {
     return state;
   }
 

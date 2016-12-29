@@ -22,7 +22,7 @@ const HomePage = () => {
           </p>
           <p>
             The data was cleaned, reduced to features, and the speaker was modeled with a Random
-            Forest. The algorithim correctly predicted who spoke each line with an 80% success rate.
+            Forest. The algorithm correctly predicted who spoke each line with an 80% success rate.
             The full code for the model and
             this site can be viewed on <a href="https://github.com/user01/PresidentialDebates">
               GitHub

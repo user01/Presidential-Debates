@@ -11,7 +11,7 @@ const percentize = (num,den) => {
 const LastResults = ({results}) => {
 
   const currentElmIndex = R.findIndex(R.propEq('guess', 'none'), results);
-  const targetIndex = currentElmIndex == null ? results.length - 1 : currentElmIndex - 1;
+  const targetIndex = currentElmIndex == -1 ? results.length - 1 : currentElmIndex - 1;
 
   if (targetIndex < 0) {
     return (
@@ -24,7 +24,7 @@ const LastResults = ({results}) => {
   }
 
   const lastElm = R.nth(targetIndex, results);
-  console.log('Last elm', lastElm);
+  // console.log('Last elm', lastElm);
 
   const guessElms = R.filter(R.pipe(
     R.propEq('guess', 'none'),

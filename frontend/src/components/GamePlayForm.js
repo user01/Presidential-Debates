@@ -1,6 +1,7 @@
 import React from 'react';
 import ScoreResults from './ScoreResults';
 import LastResults from './LastResults';
+import {Link} from 'react-router';
 
 import R from 'ramda';
 
@@ -12,7 +13,6 @@ class GamePlayForm extends React.Component {
       this.props.chooseLeft();
     };
     this.right = () => {
-      console.log('Right', this);
       this.props.chooseRight();
     };
   }
@@ -24,10 +24,19 @@ class GamePlayForm extends React.Component {
 
     if (currentElm == null) {
       console.warn("!!!!!!! no elements match - should show game over");
+      return (
+        <div>
+          <LastResults results={this.props.data} />
+          <h3 className="center">Congratulations!</h3>
+          <p>You have completed the entire debate. Would you care to see your <Link to="/stats">statistics against the algorithm</Link>?</p>
+          <p className="center">
+            <Link className="pure-button button-success button-candidate" to="/stats">Statistics</Link>
+          </p>
+
+        </div>
+      );
     }
-    const left_style = {
-      'padding-right': '2em'
-    };
+
     return (
       <div>
         <LastResults results={this.props.data} />
@@ -40,9 +49,9 @@ class GamePlayForm extends React.Component {
           </div>
         </div>
         <p>
-          <i className="fa fa-quote-left" style={{'padding-right': '0.5em'}} aria-hidden="true"></i>
+          <i className="fa fa-quote-left" style={{'paddingRight': '0.5em'}} aria-hidden="true"></i>
           {currentElm.Text}
-          <i className="fa fa-quote-right" style={{'padding-left': '0.2em', 'float':'right'}} aria-hidden="true"></i>
+          <i className="fa fa-quote-right" style={{'paddingLeft': '0.2em', 'float':'right'}} aria-hidden="true"></i>
         </p>
       </div>
     );

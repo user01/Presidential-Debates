@@ -19,8 +19,6 @@ const AllStats = ({results}) => {
     R.addIndex(R.map)((elm, idx) => {
       if (!elm.Text || elm.guess == 'none') return false;
 
-      const text_sample = elm.Text.length > 50 ? elm.Text.substring(0,50) + '…' : elm.Text;
-
       return (
         <tr key={idx}>
           <td><p className="table-line center" style={{color:elm.Speaker == 'trump' ? '#a50202' : '#000092'}}>{chance.capitalize(elm.Speaker)}</p></td>

@@ -6,8 +6,6 @@ import {
 import AllStats from './stats/AllStats.js';
 import SummaryStats from './stats/SummaryStats.js';
 import AccuracyGraphComponent from './stats/AccuracyGraphComponent.jsx';
-import C3Chart from 'react-c3js';
-import 'c3/c3.css';
 
 class StatsComponent extends React.Component {
   constructor(props, context) {

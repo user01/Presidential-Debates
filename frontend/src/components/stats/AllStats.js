@@ -17,7 +17,7 @@ const AllStats = ({results}) => {
 
   const elms = R.pipe(
     R.addIndex(R.map)((elm, idx) => {
-      if (elm.guess == 'none') return false;
+      if (!elm || elm.guess == 'none') return false;
 
       const text_sample = elm.Text.length > 50 ? elm.Text.substring(0,50) + '…' : elm.Text;
 

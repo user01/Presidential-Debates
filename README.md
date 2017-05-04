@@ -1,7 +1,7 @@
 
 # Presidential Debates
 
-:video_game: :game_die: :tada: [Play against the model!](https://user01.github.io/PresidentialDebates/) :tada: :game_die: :video_game:
+:video_game: :game_die: :tada: [Play against the model!](https://user01.github.io/Presidential-Debates/) :tada: :game_die: :video_game:
 
 This project performs data cleaning, feature engineering, and prediction models
 on transcripts of each of the 2016 US Presidential Debates.
